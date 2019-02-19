@@ -13,10 +13,12 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const jsonParser =bodyParser.json({limit:'10mb'});
 const urlEncoded = bodyParser.urlencoded({limit:'10mb',extended:true});
+const cors = require('cors');
 
 app.use(compression());
 app.use(jsonParser  );
 app.use(urlEncoded );
+app.use(cors());
 
 // server.use(middleware);
 // server.use(router);
@@ -30,7 +32,7 @@ app.use('/API',routerAPI);
 // })
 
 app.use('/*',function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
+    res.header("Access-Control-Allow-Origin", 'true');
     res.header("Access-Control-Allow-Headers", "Origin,Accept, Content-Type, X-Requested-With,Access-Control-*,Cache-Control, username,userpassword,Pragma, Authorization,X-PINGOTHER, query");
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST,DELETE");
     next();
