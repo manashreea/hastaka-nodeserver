@@ -4,4 +4,7 @@ npm start
 or
 node server.js
 
+>>pm2 command
+sudo pm2 restart server.js --name "hastaka-nodeAPI" -- start
+
 

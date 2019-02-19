@@ -29,7 +29,7 @@ module.exports = {
             client
             .db('hastakacoll')
             .collection('users')
-            //.remove({'firstname': null,'lastname': null});
+            //.deleteOne({'firstname': 'smita','lastname': 'lasang'});
             .insertOne({
                 'firstname' : contactdata.firstname,
                 'lastname': contactdata.lastname,
